@@ -51,7 +51,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
             return
         }
         
-        var tipPercentage = 0.0
+        va
+        r tipPercentage = 0.0
         
         switch tipSelector.selectedSegmentIndex {
         case 0:
