@@ -17,17 +17,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var totalAmountLabel: UILabel!
     @IBOutlet weak var totalLabel: UILabel!
     
-    @IBAction func billAmountDidChanged(_ sender: AnyObject) {
-        
-    }
-    
-    @IBAction func billAmountDidTouched(_ sender: AnyObject) {
-        billAmountField.text = "0.00"
-    }
-    
-
-    
-
     override func viewDidLoad() {
         super.viewDidLoad()
         billAmountField.delegate = self
@@ -41,11 +30,17 @@ class ViewController: UIViewController, UITextFieldDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    func validateBillAmount 
+    func validateBillAmount(text: String) -> Bool {
+        var result = false
+        if text != "0.00" {
+            result = true
+        }
+        return result
+    }
     
-    func calculateTip(_ sender: AnyObject) {
+    @IBAction func calculateTip(sender: AnyObject) {
         guard let billAmount = Double(billAmountField.text!) else {
-            //show erro
+            //show error
             billAmountField.text = "0.00"
             tipAmountLabel.text = "0.00"
             totalAmountLabel.text = "0.00"
@@ -80,4 +75,13 @@ class ViewController: UIViewController, UITextFieldDelegate {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+
 }
+
+
+    
+   

@@ -43,10 +43,6 @@
                                                         <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
-                                                <connections>
-                                                    <action selector="billAmountDidChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="iFk-BL-Wfc"/>
-                                                    <action selector="billAmountDidTouched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rHf-ut-B2a"/>
-                                                </connections>
                                             </textField>
                                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="dVI-kw-KLO">
                                                 <constraints>
@@ -82,9 +78,6 @@
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                         </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="calculateTip:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rJr-3A-Kci"/>
-                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
