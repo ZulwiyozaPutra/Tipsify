@@ -17,23 +17,22 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var totalAmountLabel: UILabel!
     @IBOutlet weak var totalLabel: UILabel!
     
+    @IBAction func billAmountDidChanged(_ sender: AnyObject) {
+        
+    }
+    
+    @IBAction func billAmountDidTouched(_ sender: AnyObject) {
+        billAmountField.text = "0.00"
+    }
+    
 
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
         billAmountField.delegate = self
-        
-        if billAmountField.text!.isEmpty {
-            calculateTip.userInteractionEnabled = false
-        }
     }
-    
-    
-    func textFieldDidBeginEditing(textField: UITextField) {
-        calculateTip.userInteractionEnabled = true
-    }
-    
+
 
 
     override func didReceiveMemoryWarning() {
@@ -42,7 +41,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func calculateTip(sender: AnyObject) {
+    func validateBillAmount 
+    
+    func calculateTip(_ sender: AnyObject) {
         guard let billAmount = Double(billAmountField.text!) else {
             //show erro
             billAmountField.text = "0.00"
@@ -69,20 +70,14 @@ class ViewController: UIViewController, UITextFieldDelegate {
         let roundedTipAmount = round(100*tipAmount)/100
         let totalAmount = roundedBillAmount + roundedTipAmount
         
-        if (!billAmountField.editing) {
+        if (!billAmountField.isEditing) {
             billAmountField.text = String(format: "%.2f", roundedBillAmount)
         }
         tipAmountLabel.text = String(format: "%.2f", roundedTipAmount)
         totalAmountLabel.text = String(format: "%.2f", totalAmount)
         totalLabel.text = String("Total Amount")
     }
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
-    
-    override func preferredStatusBarStyle() -> UIStatusBarStyle {
-        return .LightContent
-    }
-    
 }
-
