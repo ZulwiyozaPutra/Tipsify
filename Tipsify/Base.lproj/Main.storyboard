@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="HUK-8X-7E2">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Tipisfy-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Tipsify" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="TipViewController" customModule="Tipsify" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -78,6 +78,9 @@
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="calculateTipWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lKb-jj-yIv"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -173,6 +176,13 @@
                             <constraint firstItem="9He-JR-HPq" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="y7X-kq-cgN"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Tipisfy" id="7oT-jJ-YMh">
+                        <barButtonItem key="rightBarButtonItem" title="Settings" id="PIx-Yp-6Ps">
+                            <connections>
+                                <segue destination="0dM-Ps-tjg" kind="show" id="RPP-zA-8My"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
                         <outlet property="billAmountField" destination="kkb-Dm-q5z" id="oVN-Ku-cSg"/>
@@ -184,7 +194,43 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="185" y="484"/>
+            <point key="canvasLocation" x="1124" y="483.50824587706148"/>
+        </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="ssT-yA-IfB">
+            <objects>
+                <viewController id="0dM-Ps-tjg" customClass="SettingsViewController" customModule="Tipsify" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="toH-sY-e0F"/>
+                        <viewControllerLayoutGuide type="bottom" id="j7Q-g9-AqX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1xr-Uj-GKi">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jOF-XV-76k" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1914" y="484"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="4Kb-7v-SEl">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="HUK-8X-7E2" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="09A-IO-vGm">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="eXd-Yj-VwK"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XH1-ZB-P22" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="184.80000000000001" y="483.50824587706148"/>
         </scene>
     </scenes>
     <resources>
